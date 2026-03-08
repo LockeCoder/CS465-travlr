@@ -1,6 +1,6 @@
 # CS465 Travlr (Express)
 
-Travlr Getaways is a static website served through a Node.js + Express server. This repository represents the Module 1 milestone for SNHU CS-465, where the initial client-facing shell is rendered in the browser and organized using the Express framework.
+Travlr Getaways is a static website served through a Node.js and Express server. This repository represents the Module 1 milestone for SNHU CS-465, where the initial client-facing shell is rendered in the browser and organized using the Express framework.
 
 ## Tech Stack
 - Node.js
