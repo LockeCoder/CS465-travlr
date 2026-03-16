@@ -8,15 +8,14 @@ var fs = require('fs');
 
 var indexRouter = require('./app_server/routes/index');
 var travelRouter = require('./app_server/routes/travel');
-var usersRouter = require('./app_server/routes/users'); // keep only if you still have this file
 
 var app = express();
 
-// view engine setup (now points to app_server/views)
+// view engine setup (points to app_server/views)
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 
-// optional: register partials if you created app_server/views/partials
+// Register partials only if folder exists
 var partialsPath = path.join(__dirname, 'app_server', 'views', 'partials');
 if (fs.existsSync(partialsPath)) {
   hbs.registerPartials(partialsPath);
@@ -27,21 +26,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// static files still come from /public
+// Static files served from /public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// routes
-app.use('/travel', travelRouter); // NEW
-app.use('/', indexRouter);
-app.use('/users', usersRouter); // remove if you don't use it
+// Stop favicon.ico 404 from triggering error rendering noise
+app.get('/favicon.ico', function (req, res) {
+  res.status(204).end();
+});
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
+// Routes
+app.use('/travel', travelRouter);
+app.use('/', indexRouter);
+
+// Catch 404 and forward to error handler
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
-// error handler
-app.use(function(err, req, res, next) {
+// Error handler (renders app_server/views/error.hbs)
+app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
