@@ -28,11 +28,10 @@ if (process.platform === 'win32') {
   });
 }
 
-const gracefulShutdown = (msg, callback) => {
-  mongoose.connection.close(() => {
-    console.log(`Mongoose disconnected through ${msg}`);
-    callback();
-  });
+const gracefulShutdown = async (msg, callback) => {
+  await mongoose.connection.close();
+  console.log(`Mongoose disconnected through ${msg}`);
+  callback();
 };
 
 process.once('SIGUSR2', () => {
