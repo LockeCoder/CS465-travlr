@@ -5,8 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');
 
+require('./app_api/models/db');
+
 var indexRouter = require('./app_server/routes/index');
 var travelRouter = require('./app_server/routes/travel');
+var apiRouter = require('./app_api/routes/index');
 
 var app = express();
 
@@ -22,7 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// mount travel first
+// routes
+app.use('/api', apiRouter);
 app.use('/travel', travelRouter);
 app.use('/', indexRouter);
 
