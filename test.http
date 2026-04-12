@@ -1,0 +1,38 @@
+### GET all trips
+GET http://localhost:3000/api/trips
+
+### GET one trip
+GET http://localhost:3000/api/trips/GALE
+
+### CREATE trip
+POST http://localhost:3000/api/trips
+Content-Type: application/json
+
+{
+  "code": "TEST1",
+  "name": "Test Trip",
+  "length": "2 nights / 3 days",
+  "start": "2026-08-01T00:00:00.000Z",
+  "resort": "Test Resort",
+  "perPerson": "$499",
+  "image": "test.jpg",
+  "description": "Test trip"
+}
+
+### UPDATE trip
+PUT http://localhost:3000/api/trips/TEST1
+Content-Type: application/json
+
+{
+  "code": "TEST1",
+  "name": "Updated Trip",
+  "length": "3 nights / 4 days",
+  "start": "2026-08-02T00:00:00.000Z",
+  "resort": "Updated Resort",
+  "perPerson": "$599",
+  "image": "updated.jpg",
+  "description": "Updated trip"
+}
+
+### DELETE trip
+DELETE http://localhost:3000/api/trips/TEST1

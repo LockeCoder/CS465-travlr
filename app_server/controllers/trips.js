@@ -4,9 +4,12 @@ const Trip = mongoose.model('trips');
 const tripsList = async (req, res) => {
   try {
     const trips = await Trip.find({});
-    res.status(200).json(trips);
+    return res.status(200).json(trips);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json({
+      message: 'Error retrieving trips',
+      error: err.message
+    });
   }
 };
 
@@ -18,9 +21,12 @@ const tripsFindByCode = async (req, res) => {
       return res.status(404).json({ message: 'Trip not found' });
     }
 
-    res.status(200).json(trip);
+    return res.status(200).json(trip);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json({
+      message: 'Error retrieving trip',
+      error: err.message
+    });
   }
 };
 
@@ -37,9 +43,12 @@ const tripsAddTrip = async (req, res) => {
       description: req.body.description
     });
 
-    res.status(201).json(trip);
+    return res.status(201).json(trip);
   } catch (err) {
-    res.status(400).json(err);
+    return res.status(400).json({
+      message: 'Error creating trip',
+      error: err.message
+    });
   }
 };
 
@@ -61,9 +70,12 @@ const tripsUpdateTrip = async (req, res) => {
     trip.description = req.body.description;
 
     const updatedTrip = await trip.save();
-    res.status(200).json(updatedTrip);
+    return res.status(200).json(updatedTrip);
   } catch (err) {
-    res.status(400).json(err);
+    return res.status(400).json({
+      message: 'Error updating trip',
+      error: err.message
+    });
   }
 };
 
@@ -75,9 +87,12 @@ const tripsDeleteTrip = async (req, res) => {
       return res.status(404).json({ message: 'Trip not found' });
     }
 
-    res.status(204).send();
+    return res.status(204).send();
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json({
+      message: 'Error deleting trip',
+      error: err.message
+    });
   }
 };
 
