@@ -36,3 +36,17 @@ Content-Type: application/json
 
 ### DELETE trip
 DELETE http://localhost:3000/api/trips/TEST1
+
+PUT http://localhost:3000/api/trips/GALE
+Content-Type: application/json
+
+{
+  "code": "GALE",
+  "name": "Gale Reef Updated",
+  "length": "4 nights / 5 days",
+  "start": "2026-05-15T00:00:00.000Z",
+  "resort": "Emerald Bay Resort",
+  "perPerson": "$799",
+  "image": "reef1.jpg",
+  "description": "Gale Reef trip updated"
+}

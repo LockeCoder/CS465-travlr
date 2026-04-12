@@ -15,7 +15,13 @@ const tripsList = async (req, res) => {
 
 const tripsFindByCode = async (req, res) => {
   try {
-    const trip = await Trip.findOne({ code: req.params.tripCode });
+    const { tripCode } = req.params;
+
+    if (!tripCode) {
+      return res.status(400).json({ message: 'tripCode is required' });
+    }
+
+    const trip = await Trip.findOne({ code: tripCode });
 
     if (!trip) {
       return res.status(404).json({ message: 'Trip not found' });
@@ -54,7 +60,13 @@ const tripsAddTrip = async (req, res) => {
 
 const tripsUpdateTrip = async (req, res) => {
   try {
-    const trip = await Trip.findOne({ code: req.params.tripCode });
+    const { tripCode } = req.params;
+
+    if (!tripCode) {
+      return res.status(400).json({ message: 'tripCode is required' });
+    }
+
+    const trip = await Trip.findOne({ code: tripCode });
 
     if (!trip) {
       return res.status(404).json({ message: 'Trip not found' });
@@ -81,7 +93,13 @@ const tripsUpdateTrip = async (req, res) => {
 
 const tripsDeleteTrip = async (req, res) => {
   try {
-    const deletedTrip = await Trip.findOneAndDelete({ code: req.params.tripCode });
+    const { tripCode } = req.params;
+
+    if (!tripCode) {
+      return res.status(400).json({ message: 'tripCode is required' });
+    }
+
+    const deletedTrip = await Trip.findOneAndDelete({ code: tripCode });
 
     if (!deletedTrip) {
       return res.status(404).json({ message: 'Trip not found' });
