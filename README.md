@@ -1,37 +1,49 @@
-# CS465 Travlr (Express)
+# CS465 Travlr Getaways - Module 7
 
-Travlr Getaways is a static website served through a Node.js and Express server. This repository represents the Module 1 milestone for SNHU CS-465, where the initial client-facing shell is rendered in the browser and organized using the Express framework.
+This repository contains the back-end portion of the Travlr Getaways full stack project for CS 465. At this stage of the project, the application includes secure authentication for the admin SPA using JSON Web Tokens (JWT), protected administrative API endpoints, and full CRUD support for trip management.
 
-## Tech Stack
+## Project Overview
+
+Travlr Getaways is a full stack travel application with two sides:
+
+- A public customer-facing website
+- An Angular-based admin SPA for trip management
+
+For Module 7, the project was updated to add a security layer for the admin side. This includes:
+
+- User registration and login
+- JWT generation for authenticated users
+- Protected admin API endpoints
+- Front-end login support in the Angular admin application
+- Authenticated CRUD operations for trips
+
+## Technologies Used
+
+### Back End
 - Node.js
 - Express
-- HTML / CSS (static pages + assets)
+- MongoDB
+- Mongoose
+- JSON Web Tokens (`jsonwebtoken`)
+- Crypto (`crypto`) for password hashing
 
-## Project Structure (Key Paths)
-- `public/` — Static site content served by Express
-  - `public/index.html` — Homepage
-  - `public/css/` — Stylesheets
-  - `public/images/` — Images and UI assets
-- `routes/` — Express routes
-- `app.js` — Express app configuration
+### Front End Admin App
+- Angular
+- TypeScript
+- Angular Router
+- Angular HttpClient
 
-## Run Locally
-1. Install dependencies:
-   ```bash
-   npm install
+## Repository Structure
 
-## Start the server
-npm start
-
-## Open in your browser
-http://localhost:3000/index.html
-
-## Notes
-• The homepage is configured to load at the root route (/) for a cleaner, portfolio-ready experience.
-• This is the starting point for expanding the application into a full stack MEAN-based project in later modules.
-## Then commit + push:
-
-```powershell
-git add README.md
-git commit -m "Add README"
-git push
+```text
+app_api/
+  controllers/
+  middleware/
+  models/
+  routes/
+app_server/
+bin/
+data/
+public/
+app.js
+package.json
