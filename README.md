@@ -27,8 +27,8 @@ npm start
 http://localhost:3000/index.html
 
 ## Notes
-• The homepage is configured to load at the root route (/) for a cleaner, portfolio-ready experience.
-• This is the starting point for expanding the application into a full stack MEAN-based project in later modules.
+- The homepage is configured to load at the root route (/) for a cleaner, portfolio-ready experience.
+- This is the starting point for expanding the application into a full stack MEAN-based project in later modules.
 ## Then commit + push:
 
 ```powershell
