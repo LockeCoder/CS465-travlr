@@ -108,7 +108,9 @@ http://localhost:3000
 
 ## Companion Admin Application
 
-A separate Angular administrator SPA was developed in a different local project folder and connected to this backend during testing. It was used to verify authenticated trip management workflows including:
+The Angular administrator single-page application (SPA) for this project is maintained in the same GitHub repository on the `admin-module6` branch. It was developed as a separate project folder within the larger local CS-465 workspace and connected to this backend during testing.
+
+It was used to verify authenticated trip management workflows including:
 
 - Login
 - Trip retrieval
@@ -125,5 +127,5 @@ This project demonstrates:
 - MongoDB and Mongoose integration
 - Authentication and protected endpoints
 - Separation of concerns using routes, controllers, models, and middleware
-- Integration between a backend API and a separate Angular admin SPA
+- Integration between a backend API and the Angular admin SPA on the `admin-module6` branch
 - CRUD testing across public and authenticated workflows
