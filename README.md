@@ -4,8 +4,8 @@ Travlr Getaways is a travel web application project built for CS 465. This `main
 
 Additional full stack project work is represented elsewhere in the same repository:
 
-- `admin-module6` — Angular administrator SPA
-- `module8` — final reflection README for the completed full stack project
+- `admin-module6` â€” Angular administrator SPA
+- `module8` â€” final reflection README for the completed full stack project
 
 ## Overview
 
@@ -23,13 +23,13 @@ The broader project also included a separate Angular administrator SPA and secur
 
 ## Repository Structure
 
-- `bin/` — startup scripts
-- `public/` — static assets such as CSS, images, and client-side resources
-- `routes/` — Express route definitions
-- `views/` — Handlebars templates and rendered views
-- `app.js` — Express application setup and middleware configuration
-- `package.json` — project dependencies and scripts
-- `package-lock.json` — locked dependency versions
+- `bin/` â€” startup scripts
+- `public/` â€” static assets such as CSS, images, and client-side resources
+- `routes/` â€” Express route definitions
+- `views/` â€” Handlebars templates and rendered views
+- `app.js` â€” Express application setup and middleware configuration
+- `package.json` â€” project dependencies and scripts
+- `package-lock.json` â€” locked dependency versions
 
 ## Tech Stack
 
