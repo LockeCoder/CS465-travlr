@@ -1,6 +1,15 @@
-# CS 465 Travlr Getaways Full Stack Project Reflection
+# CS 465 Module 8 Reflection: Travlr Getaways Full Stack Project
 
-This repository contains the completed Travlr Getaways full stack web application for CS 465. The project uses the MEAN stack approach to support both a customer-facing travel website and an administrator single-page application (SPA) with secure login and protected CRUD functionality.
+This repository documents the Travlr Getaways full stack web application completed for CS 465. The project uses a MEAN-style architecture to support a customer-facing travel website, a REST API, MongoDB data storage, and an Angular administrator single-page application (SPA) with authenticated CRUD functionality.
+
+## Project Scope
+
+Travlr Getaways was developed as a full stack travel application with two connected parts:
+
+- a customer-facing website built with Express and Handlebars
+- an Angular administrator SPA used to manage trip data through the backend API
+
+The backend and customer-facing application were built in the `travlr-express` project, while the Angular administrator SPA was developed separately in the `travlr-admin` project and tested against the same backend.
 
 ## Architecture
 
@@ -33,14 +42,22 @@ The most valuable skills I developed were working with the MEAN stack, building 
 - Angular
 - Node.js
 - Mongoose
-- JSON Web Token authentication
 - Handlebars
 - TypeScript
 - HTML / CSS / JavaScript
+- REST API integration
+- JSON Web Token authentication
 
-## Run Locally
+## Core Work Completed
 
-### Back End
-```bash
-npm install
-npm start
+- Built a customer-facing travel website with Express and Handlebars
+- Developed a REST API for trip retrieval and management
+- Integrated MongoDB using Mongoose schemas and models
+- Built an Angular administrator SPA for authenticated trip management
+- Implemented login and route protection for admin workflows
+- Added protected CRUD functionality for trip records
+- Tested public and authenticated flows across the frontend, backend, and database
+
+## Final Note
+
+This README serves as the Module 8 reflection for the full stack Travlr Getaways project and summarizes the architecture, functionality, testing, and technical growth demonstrated through the course.
